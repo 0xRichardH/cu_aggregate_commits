@@ -1,5 +1,7 @@
 set shell := ["fish", "-c"]
 
+set dotenv-load
+
 export FLASK_APP := 'src/app.py'
 
 venv:
@@ -7,3 +9,9 @@ venv:
 
 run: venv
   flask run
+
+fetch: venv
+  python src/fetch.py
+
+db: venv
+  flask --app src/fetch.py db init
