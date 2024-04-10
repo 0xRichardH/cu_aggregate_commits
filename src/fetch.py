@@ -25,7 +25,7 @@ def create_db():
 class Commit(db.Model):
     __tablename__ = "commits"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    sha = db.Column(db.String(40), nullable=False, unique=True)
+    sha = db.Column(db.String(40), nullable=False)
     node_id = db.Column(db.Text, nullable=False)
     html_url = db.Column(db.Text, nullable=True)
     url = db.Column(db.Text, nullable=False)
